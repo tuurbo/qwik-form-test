@@ -8,11 +8,11 @@ export default component$(() => {
   return (
     <header>
       <div class="logo">
-        <a href="https://qwik.builder.io/" target="_blank" title="qwik">
+        <a href="/" target="_blank" title="qwik">
           <QwikLogo />
         </a>
       </div>
-      <ul>
+      {/* <ul>
         <li>
           <a href="https://qwik.builder.io/docs/components/overview/" target="_blank">
             Docs
@@ -28,7 +28,7 @@ export default component$(() => {
             Tutorials
           </a>
         </li>
-      </ul>
+      </ul> */}
     </header>
   );
 });

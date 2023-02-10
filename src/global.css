@@ -6,6 +6,64 @@
  *
  */
 
+ @tailwind base;
+ @tailwind components;
+
+ .form-label {
+    @apply mb-1 block text-sm text-gray-800;
+  }
+
+  .form-input {
+    @apply block w-full rounded border-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50;
+  }
+
+  .form-select {
+    @apply block w-full rounded border-gray-400 py-2 pl-3 pr-10 focus:border-blue-400 focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50;
+  }
+
+  .form-error {
+    @apply mt-0.5 block text-sm text-red-500;
+  }
+  .form-error::first-letter {
+    @apply uppercase;
+  }
+
+  .form-field-invalid .form-label {
+    @apply text-red-500;
+  }
+
+  .form-field-invalid .form-input,
+  .form-field-invalid .form-select {
+    @apply border-red-500 text-red-500 focus:ring-red-500 focus:ring-opacity-50;
+  }
+
+  .form-checkbox {
+    @apply rounded-sm border-gray-400 text-indigo-400 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-400 focus:ring-opacity-50 focus:ring-offset-0;
+  }
+
+  .form-input-sm {
+    @apply py-1 px-2 text-sm;
+  }
+
+  .form-select-sm {
+    background-position: right 0.15rem center;
+    @apply py-1 px-2 text-sm;
+  }
+
+  .form-select-tight {
+    padding-left: 0.65rem;
+    padding-right: 0.5rem;
+    background-position: right 0.15rem center;
+  }
+
+  input[type='file'] {
+    @apply border p-1;
+  }
+
+
+
+ @tailwind utilities;
+
 :root {
   --qwik-dark-blue: #006ce9;
   --qwik-light-blue: #18b6f6;
