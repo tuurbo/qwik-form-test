@@ -68,33 +68,49 @@ export default component$(() => {
             class="form-input"
             type="text"
             value={group.controls.age.value}
-            onInput$={(e) => {
+            onInput$={async (e) => {
               const val = (e.target as HTMLInputElement).value;
-              group.setValue(group.controls.age, val);
-              // group.setValue("age", val);
+              await group.setValue(group.controls.age, val);
             }}
           />
           <FormDebug ctrl={group.controls.age} />
+          <div class="border border-orange-300 p-1 my-1">
+            <PrettyPrint data={group.controls.age.errors} />
+          </div>
+          <div class="border border-orange-300 p-1 my-1">
+            <PrettyPrint data={JSON.stringify(group.controls.age.errors)} />
+          </div>
         </div>
       </div>
 
       <div class="my-6 mb-2 flex flex-wrap border-2 border-blue-300 p-2">
-        {group.controls.options.controls?.map((control, i) => (
-          <div class="my-1 w-1/2 px-2" key={`opt-${i}`}>
-            Option {i}
-            <input
-              class="form-input"
-              type="text"
-              value={control.value}
-              onInput$={(e) => {
-                const val = (e.target as HTMLInputElement).value;
-                group.setValue(group.controls.options.controls[i], val);
-                // group.setValue(`options.${i}`, val);
-              }}
-            />
-            <FormDebug ctrl={control} />
-          </div>
-        ))}
+        {group.controls.options.controls?.map(
+          (control: FormControl, i: number) => (
+            <div class="my-1 w-1/2 px-2" key={`opt-${i}`}>
+              Option {i}
+              <input
+                class="form-input"
+                type="text"
+                value={control.value}
+                onInput$={async (e) => {
+                  const val = (e.target as HTMLInputElement).value;
+                  await group.setValue(group.controls.options.controls[i], val);
+                }}
+              />
+              <FormDebug ctrl={control} />
+              <div class="border border-orange-300 p-1 my-1">
+                <PrettyPrint data={group.controls.options.controls[i].errors} />
+              </div>
+              <div class="border border-orange-300 p-1 my-1">
+                <PrettyPrint
+                  data={JSON.stringify(
+                    group.controls.options.controls[i].errors
+                  )}
+                />
+              </div>
+            </div>
+          )
+        )}
       </div>
 
       <button
