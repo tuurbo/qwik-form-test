@@ -3,13 +3,10 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import {
   formArray,
   formControl,
-  type FormArray,
-  type FormControl,
   useForm,
-  // formGroup,
-  // type FormGroup,
 } from "~/components/form/form";
 import { FormDebug } from "~/components/form/form-helpers";
+import type { FormArray, FormControl } from '~/components/form/types';
 import { isMax, required } from "~/components/form/validators";
 import PrettyPrint from "~/components/pretty-print/pretty-print";
 

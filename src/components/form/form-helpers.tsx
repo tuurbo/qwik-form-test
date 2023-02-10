@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import PrettyPrint from "../pretty-print/pretty-print";
-import { type FormControl } from "./form";
+import { type FormControl } from "./types";
 
 export const FormDebug = component$<{ class?: string; ctrl: FormControl }>(
   (props) => {
