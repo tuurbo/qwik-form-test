@@ -23,7 +23,7 @@ export const FormDebug = component$<{ class?: string; ctrl: FormControl }>(
     return (
       <div class={props.class || "py-2 text-xs"}>
         <div>
-          value:{" i_break_in_dev_mode_(sometimes) "} -
+          value:{" this_breaks!! "} -
           {typeof props.ctrl.value === "boolean" ? (
             <>{props.ctrl.value === true ? "true " : "false "} </>
           ) : (
