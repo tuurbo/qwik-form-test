@@ -94,17 +94,17 @@ export default component$(() => {
                 value={control.value}
                 onInput$={async (e) => {
                   const val = (e.target as HTMLInputElement).value;
-                  await group.setValue(group.controls.options.controls[i], val);
+                  await group.setValue(control, val);
                 }}
               />
               <FormDebug ctrl={control} />
               <div class="border border-orange-300 p-1 my-1">
-                <PrettyPrint data={group.controls.options.controls[i].errors} />
+                <PrettyPrint data={control.errors} />
               </div>
               <div class="border border-orange-300 p-1 my-1">
                 <PrettyPrint
                   data={JSON.stringify(
-                    group.controls.options.controls[i].errors
+                    control.errors
                   )}
                 />
               </div>
