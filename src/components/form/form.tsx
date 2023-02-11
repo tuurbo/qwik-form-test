@@ -22,6 +22,12 @@ export function useForm<
   );
 
   const setValue = $(async (ctrl: AbstractControl, value: any) => {
+    /* uncomment this to break reactivity */
+    // eslint-disable-next-line no-constant-condition
+    // if (false) {
+    //   store.controls;
+    // }
+
     ctrl.value = value;
     if (ctrl.validator) {
       await validate(ctrl);

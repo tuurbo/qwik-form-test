@@ -9,7 +9,7 @@ export declare interface ValidatorFn {
 
 export function required(): ValidatorFn {
   return function (val: any) {
-    if (val !== null && val !== '' && typeof val !== 'undefined') {
+    if (val !== null && val !== "" && typeof val !== "undefined") {
       return null;
     }
 
@@ -20,7 +20,6 @@ export function required(): ValidatorFn {
     };
   };
 }
-
 
 export function isMax(max: number): ValidatorFn {
   return function (val: any) {

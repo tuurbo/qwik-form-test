@@ -10,7 +10,6 @@ export default component$(() => {
   const group = useForm({
     age: {
       value: 1,
-      // COMMENT THIS LINE OUT TO STOP BUG
       validator: $(() => [required(), isMax(3)]),
       valid: true,
     },
@@ -30,12 +29,24 @@ export default component$(() => {
               group.setValue(group.controls.age, val);
             }}
           />
-          <FormDebug ctrl={group.controls.age} />
+          <div class="border border-orange-500 my-1 p-1">
+            <FormDebug ctrl={group.controls.age} />
+          </div>
+          <div class="border border-orange-500 my-1 p-1">
+            {/* SOME CODE AS "FormDebug" component above */}
+            <div class={"py-2 text-xs"}>
+              <div>
+                value:
+                {group.controls.age.value}
+              </div>
+              <div>
+                Valid:{" "}
+                <span>{group.controls.age.valid ? "valid" : "not valid"}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* COMMENT THIS LINE OUT TO STOP BUG */}
-      {group.controls.age.value == 2 && <div>match!</div>}
     </div>
   );
 });
